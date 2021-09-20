@@ -1,0 +1,56 @@
+// ALL THE @INCLUDE TAGS ARE THE RESPONSIVE CODE
+
+//Basically the copyright nand social media handle section
+.footer {
+  height: 40vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  @include change(tab-land) {
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2.5rem;
+    text-align: center;
+  }
+  //copyright section
+  &-credits {
+    margin-right: 10rem;
+
+    @include change(tab-land) {
+      margin-right: 0rem;
+      font-size: 1.2rem;
+    }
+    @include change(tab-port) {
+      margin-right: 0rem;
+      font-size: 1.2rem;
+    }
+    &_cred {
+      color: var(--text-color);
+    }
+
+    &_conc {
+      margin-top: 1rem;
+      & a {
+        text-decoration: none;
+        color: var(--button-color);
+        margin-right: 1rem;
+      }
+    }
+  }
+  //Social media section
+  &-social {
+    margin-left: 5rem;
+
+    @include change(tab-land) {
+      margin-top: 2rem;
+      margin-left: 0rem;
+    }
+    @include change(tab-port) {
+      margin-top: 2rem;
+      margin-left: 0rem;
+    }
+  }
+}

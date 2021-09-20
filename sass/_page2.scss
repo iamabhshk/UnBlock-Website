@@ -1,0 +1,599 @@
+.page-2 {
+  height: 450vh; //height of the page
+
+  @include change(tab-land) {
+    height: 100%;
+  }
+  @include change(phone) {
+    height: 100%;
+  }
+}
+
+//Used to make the timeline heading number
+.title {
+  &-heading {
+    display: flex;
+    align-items: center;
+    margin-left: 10%;
+    margin-top: 5rem;
+
+    //To make the circle around the number
+    &_circle {
+      width: 64px;
+      height: 64px;
+      border: 1px solid #233637;
+      border-radius: 1000px;
+      position: relative;
+
+      @include change(phone) {
+        width: 54px;
+        height: 54px;
+      }
+
+      //Number which is enclosed in the circle
+      &-number {
+        display: inline-block;
+        font-family: Oswald, sans-serif;
+        font-size: 24px;
+        padding-bottom: 2px;
+        padding-left: 1.7rem;
+        padding-top: 0.8rem;
+
+        @include change(tab-land) {
+          padding-left: 3rem;
+          padding-top: 1.2rem;
+        }
+        @include change(phone) {
+          padding-left: 3rem;
+          padding-top: 1.35rem;
+          font-size: 18px;
+        }
+      }
+    }
+
+    //First word of the Heading
+    &_name {
+      margin-left: 1rem;
+
+      @include change(tab-land) {
+        font-size: 1.2rem;
+      }
+      @include change(tab-port) {
+        font-size: 1.6rem;
+      }
+      @include change(phone) {
+        font-size: 1.45rem;
+      }
+
+      //First word of the Heading which is bolder
+      &-bold {
+        font-family: oswald;
+        font-size: 2rem;
+        color: var(--text-color);
+
+        @include change(tab-land) {
+          font-size: 2.5rem;
+        }
+        @include change(tab-port) {
+          font-size: 2.8rem;
+        }
+        @include change(phone) {
+          font-size: 3rem;
+        }
+      }
+    }
+
+    @include change(tab-land) {
+      margin-left: 10%;
+    }
+    @include change(phone) {
+      margin-left: 10%;
+    }
+  }
+}
+
+//First timeline section
+.timeline1 {
+  margin-left: 50%; //Used 50% because to move it the right hand side
+  margin-top: 5rem;
+  display: flex;
+  justify-content: space-between;
+
+  &-heading {
+    // heading of the 1st section
+    &-title {
+      font-family: oswald;
+      font-size: 1.5rem;
+      color: var(--text-color);
+
+      @include change(tab-land) {
+        font-size: 2.4rem;
+      }
+      @include change(tab-port) {
+        font-size: 2.6rem;
+      }
+    }
+    // paragraph of the 1st section
+    &-para {
+      margin-top: 1rem;
+      width: 73.5%;
+      margin-bottom: 1rem;
+      line-height: 1.4rem;
+      font-size: 1rem;
+      color: var(--text-color);
+
+      @include change(tab-land) {
+        font-size: 1.4rem;
+        width: 73%;
+        line-height: 1.8rem;
+        font-weight: 300;
+      }
+
+      @include change(tab-port) {
+        font-size: 1.5rem;
+        width: 73%;
+        line-height: 2rem;
+        font-weight: 300;
+      }
+
+      @include change(phone) {
+        font-size: 1.5rem;
+        width: 90%;
+        line-height: 2rem;
+        font-weight: 300;
+      }
+    }
+  }
+  // Not an image but the blue line separating the each section
+  &-image {
+    margin-right: 2rem;
+
+    @include change(tab-land) {
+      display: none;
+    }
+  }
+  @include change(tab-land) {
+    margin-left: 40%;
+  }
+  @include change(phone) {
+    margin-left: 15%;
+    width: 80%;
+  }
+}
+//Second timeline section
+.timeline2 {
+  margin-left: 10%; //Used 10% because to keep it at left hand side
+  margin-top: 5rem;
+  display: flex;
+  justify-content: space-around;
+  text-align: end;
+
+  &-heading {
+    //Title of the second timeline section
+    &-title {
+      margin-right: 2rem;
+      font-family: oswald;
+      font-size: 1.5rem;
+      color: var(--text-color);
+
+      @include change(tab-land) {
+        font-size: 2.4rem;
+      }
+    }
+    //Paragraph of the second timeline section
+    &-para {
+      margin-top: 1rem;
+      width: 90%;
+      margin-bottom: 1rem;
+      line-height: 1.4rem;
+      font-size: 1rem;
+      margin-left: 1.5rem;
+      color: var(--text-color);
+
+      @include change(tab-land) {
+        font-size: 1.4rem;
+        width: 73%;
+        line-height: 1.8rem;
+        margin-left: 0rem;
+        font-weight: 300;
+      }
+      @include change(tab-port) {
+        font-size: 1.5rem;
+        width: 73%;
+        line-height: 2rem;
+        font-weight: 300;
+      }
+      @include change(phone) {
+        font-size: 1.5rem;
+        width: 90%;
+        line-height: 2rem;
+        font-weight: 300;
+      }
+    }
+    // button for the timline section
+    &-button {
+      margin-right: 2rem;
+      padding: 0.9rem 1.5rem;
+      text-align: center;
+      font-family: comfortaa;
+      background-color: var(--button-color);
+      color: white;
+      border-style: none;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      transition: all 0.5s;
+
+      &:hover {
+        transform: scale(1.04);
+        background-color: rgb(5, 125, 172);
+        box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.507);
+      }
+
+      &:active {
+        transform: scale(0.98);
+      }
+
+      @include change(tab-land) {
+        padding: 1.7rem 2.8rem;
+        font-size: 1.4rem;
+      }
+      @include change(phone) {
+        padding: 1.7rem 12rem;
+        font-size: 1.5rem;
+      }
+    }
+  }
+  //Same image which is used in timeline 1
+  &-image {
+    margin-right: 42rem;
+    @include change(tab-land) {
+      display: none;
+    }
+  }
+  @include change(tab-land) {
+    margin-left: 40%;
+    text-align: left;
+  }
+  @include change(phone) {
+    margin-left: 15%;
+    width: 80%;
+  }
+}
+////third timeline section
+.timeline3 {
+  margin-left: 50%;
+  margin-top: 5rem;
+  display: flex;
+  &-heading {
+    // timeline title of the section
+    &-title {
+      font-family: oswald;
+      font-size: 1.5rem;
+      color: var(--text-color);
+
+      @include change(tab-land) {
+        font-size: 2.4rem;
+      }
+    }
+    // timeline paragraphs of the section
+
+    &-para {
+      margin-top: 1rem;
+      width: 73.5%;
+      margin-bottom: 1rem;
+      line-height: 1.4rem;
+      font-size: 1rem;
+      color: var(--text-color);
+
+      @include change(tab-land) {
+        font-size: 1.4rem;
+        width: 73%;
+        line-height: 1.8rem;
+        font-weight: 300;
+      }
+
+      @include change(tab-port) {
+        font-weight: 300;
+        font-size: 1.5rem;
+        width: 73%;
+        line-height: 2rem;
+      }
+      @include change(phone) {
+        font-size: 1.5rem;
+        width: 90%;
+        line-height: 2rem;
+        font-weight: 300;
+      }
+    }
+  }
+  &-image {
+    //Similar image used in other part of the current timeline
+    margin-right: 2rem;
+    @include change(tab-land) {
+      display: none;
+    }
+  }
+
+  @include change(tab-land) {
+    margin-left: 40%;
+  }
+  @include change(phone) {
+    margin-left: 15%;
+    width: 80%;
+  }
+}
+
+// Second timline of the page
+.services1 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  @include change(tab-land) {
+    flex-direction: column; //to put the elemetns in  vertical
+  }
+  //WHole section where it is embedded
+  &-info {
+    width: 40%;
+    margin-left: 9rem;
+    line-height: 1.5rem;
+
+    @include change(tab-land) {
+      margin-top: 5rem;
+    }
+    @include change(tab-port) {
+      margin-top: 5rem;
+    }
+    @include change(phone) {
+      margin-top: 5rem;
+      width: 70%;
+    }
+    //first title of the services section
+    &_head {
+      margin-bottom: 2rem;
+      font-family: oswald;
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: var(--text-color);
+      display: flex;
+      align-items: center;
+
+      @include change(tab-land) {
+        font-size: 2.3rem;
+        font-weight: 400;
+      }
+      @include change(tab-port) {
+        font-size: 2.3rem;
+        font-weight: 400;
+      }
+      @include change(phone) {
+        font-size: 2.4rem;
+        font-weight: 400;
+      }
+    }
+    //first para of the services section
+    &_para {
+      margin-bottom: 2rem;
+      color: var(--text-color);
+
+      @include change(tab-land) {
+        font-size: 1.4rem;
+        font-weight: 300;
+        line-height: 1.8rem;
+      }
+
+      @include change(tab-port) {
+        font-size: 1.5rem;
+        font-weight: 300;
+        line-height: 1.9rem;
+        // width: 100%;
+      }
+      @include change(phone) {
+        font-size: 1.5rem;
+        font-weight: 300;
+        line-height: 1.9rem;
+        width: 100%;
+      }
+    }
+    //first button of the services section
+    &_button {
+      margin-right: 2rem;
+      padding: 0.9rem 1.5rem;
+      text-align: center;
+      font-family: comfortaa;
+      background-color: var(--button-color);
+      color: white;
+      border-style: none;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      transition: all 0.5s;
+
+      &:hover {
+        transform: scale(1.04);
+        background-color: rgb(5, 125, 172);
+        box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.507);
+      }
+
+      &:active {
+        transform: scale(0.98);
+      }
+
+      @include change(tab-land) {
+        padding: 1.3rem 2.4rem;
+        font-size: 1.4rem;
+      }
+      @include change(phone) {
+        padding: 1.4rem 10rem;
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+  //First photo of the service
+  &-photo {
+    width: 40%;
+    height: 37rem;
+    margin-top: 3rem;
+    margin-right: 5rem;
+
+    @include change(tab-land) {
+      margin-right: 0rem;
+      margin-left: 2rem;
+    }
+
+    @include change(phone) {
+      margin-right: 0rem;
+      margin-left: 2rem;
+      margin-top: 2rem;
+      width: 70%;
+      height: 40rem;
+    }
+  }
+}
+// 2nd section of Second timline of the page
+.services2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  @include change(tab-land) {
+    flex-direction: column-reverse; //flex property to reverse the child elements
+  }
+
+  &-info {
+    width: 35%;
+    margin-right: 8rem;
+    line-height: 1.5rem;
+
+    @include change(tab-land) {
+      margin-top: 5rem;
+      margin-left: 9rem;
+      margin-right: 2rem;
+    }
+    @include change(phone) {
+      margin-top: 5rem;
+      width: 70%;
+    }
+
+    &_head {
+      //heading
+      margin-bottom: 2rem;
+      font-family: oswald;
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: var(--text-color);
+      display: flex;
+      align-items: center;
+
+      @include change(tab-land) {
+        font-size: 2.3rem;
+        font-weight: 400;
+      }
+
+      @include change(tab-port) {
+        font-size: 2.3rem;
+        font-weight: 400;
+      }
+      @include change(phone) {
+        font-size: 2.4rem;
+        font-weight: 400;
+      }
+    }
+    //Paragraph
+    &_para {
+      margin-bottom: 2rem;
+      color: var(--text-color);
+
+      @include change(tab-land) {
+        font-size: 1.4rem;
+        font-weight: 300;
+        line-height: 1.9rem;
+      }
+
+      @include change(tab-port) {
+        font-size: 1.5rem;
+        font-weight: 300;
+        line-height: 2rem;
+      }
+    }
+    //button
+
+    &_button {
+      margin-right: 2rem;
+      padding: 0.9rem 1.5rem;
+      text-align: center;
+      font-family: comfortaa;
+      background-color: var(--button-color);
+      color: white;
+      border-style: none;
+      border-radius: 6px;
+      font-size: 1.1rem;
+
+      transition: all 0.5s;
+
+      &:hover {
+        transform: scale(1.04);
+        background-color: rgb(5, 125, 172);
+        box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.507);
+      }
+
+      &:active {
+        transform: scale(0.98);
+      }
+
+      @include change(tab-land) {
+        padding: 1.3rem 2.4rem;
+        font-size: 1.4rem;
+      }
+
+      @include change(phone) {
+        padding: 1.4rem 10rem;
+        font-size: 1.3rem;
+      }
+    }
+    //Money/data details
+    &_data {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 2rem;
+      text-transform: uppercase;
+
+      &_1 {
+        & h3 {
+          font-size: 1.3rem;
+          letter-spacing: 0.1rem;
+          font-weight: 500;
+          font-family: oswald;
+          color: var(--text-color);
+        }
+        & p {
+          text-align: center;
+          font-size: 2.2rem;
+          color: var(--text-color);
+          margin-top: 1.2rem;
+        }
+      }
+    }
+  }
+  // photo of the 2nd part of the second section
+  &-photo {
+    width: 40%;
+    height: 34rem;
+    margin-top: 2rem;
+    margin-right: 1rem;
+    margin-left: 4rem;
+
+    @include change(tab-land) {
+      margin-right: 0rem;
+      margin-left: 2rem;
+    }
+
+    @include change(phone) {
+      margin-right: 0rem;
+      // margin-left: 2rem;
+      margin-top: 2rem;
+      width: 65%;
+      height: 40rem;
+    }
+  }
+}

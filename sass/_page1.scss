@@ -1,0 +1,241 @@
+// ALL THE @INCLUDE TAGS ARE THE RESPONSIVE CODE
+
+.page-1 {
+  height: 100vh; //Set the page 1 hieght to 100vh
+
+  @include change(tab-land) {
+    height: 100%;
+  }
+  @include change(phone) {
+    height: 100%;
+  }
+}
+.header {
+  display: flex; //Used flexbox to make the section side by side
+  justify-content: space-around; //Flexbox property
+  align-items: center;
+
+  @include change(tab-land) {
+    justify-content: space-between;
+  }
+  @include change(tab-port) {
+    justify-content: space-between;
+  }
+  @include change(phone) {
+    justify-content: space-between;
+  }
+
+  &_logo {
+    margin-right: 12rem; //Website logo sizing
+    align-items: center;
+    margin-top: 1.3rem;
+    width: 2.5rem;
+    height: 2.5rem;
+
+    @include change(tab-land) {
+      margin-left: 3rem;
+      width: 3rem;
+      height: 3rem;
+    }
+    @include change(phone) {
+      margin-left: 3rem;
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+  //Navigation bar of the website
+  &_nav {
+    display: flex;
+    justify-content: space-between;
+    flex: 0 0 12%;
+    color: var(--text-color);
+    margin-top: 1rem;
+    font-family: comfortaa;
+    font-size: 0.8rem;
+
+    @include change(tab-land) {
+      font-size: 1.4rem;
+      margin-right: 3rem;
+    }
+    @include change(tab-port) {
+      font-size: 1.4rem;
+      margin-right: 3rem;
+      justify-content: space-around;
+    }
+    @include change(phone) {
+      font-size: 1.2rem;
+      margin-right: 1rem;
+      justify-content: space-around;
+    }
+    //First navigation element
+    &-1 {
+      transition: all 0.5s;
+      cursor: pointer;
+
+      &:hover {
+        color: var(--button-color);
+        border-bottom: 1px solid var(--button-color);
+      }
+      @include change(tab-port) {
+        font-size: 1.4rem;
+        margin-right: 3rem;
+        justify-content: space-around;
+      }
+      @include change(phone) {
+        font-size: 1.2rem;
+        margin-right: 3rem;
+        justify-content: space-around;
+      }
+    }
+    //second navigation element
+    &-2 {
+      transition: all 0.5s;
+      cursor: pointer;
+      &:hover {
+        color: var(--button-color);
+        border-bottom: 1px solid var(--button-color);
+      }
+    }
+  }
+}
+
+//Main section of the first section
+.main {
+  display: flex; //Used flexbox
+  justify-content: space-around;
+  align-items: center;
+
+  @include change(tab-land) {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @include change(phone) {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+
+  &-info {
+    //First div of the section
+    margin-bottom: 6rem;
+    color: var(--text-color);
+    margin-left: 15rem;
+
+    @include change(tab-land) {
+      margin-left: 0rem;
+      width: 35%;
+      margin-top: 4rem;
+    }
+
+    @include change(tab-port) {
+      margin-left: 0rem;
+      width: 43%;
+      margin-top: 4rem;
+    }
+
+    @include change(phone) {
+      width: 70%;
+      margin-top: 4rem;
+    }
+
+    //First word of the info part
+    &_head {
+      font-weight: 500;
+      padding-bottom: 0.6rem;
+      font-size: 1.2rem;
+
+      @include change(tab-land) {
+        font-size: 1.6rem;
+        font-weight: 200;
+      }
+
+      @include change(tab-port) {
+        font-size: 1.6rem;
+        font-weight: 200;
+      }
+
+      @include change(phone) {
+        font-size: 1.6rem;
+        font-weight: 200;
+      }
+    }
+
+    //Center part of the info part
+    &_text {
+      font-weight: 700;
+      padding-bottom: 1rem;
+      font-family: oswald;
+      font-size: 2.5rem;
+
+      @include change(tab-land) {
+        font-size: 4rem;
+        font-weight: 400;
+      }
+      @include change(phone) {
+        font-size: 3rem;
+        font-weight: 400;
+      }
+    }
+
+    //sub-tag of the info part
+    &_para {
+      font-weight: 400;
+      padding-bottom: 1rem;
+      font-size: 1rem;
+
+      @include change(tab-land) {
+        font-size: 1.2rem;
+        font-weight: 400;
+      }
+      @include change(tab-port) {
+        font-size: 1.3rem;
+        font-weight: 400;
+      }
+    }
+
+    & button {
+      padding: 0.9rem 1.5rem; //Button of the info part
+      text-align: center;
+      @include change(tab-land) {
+        margin-left: 12rem;
+        padding: 1.2rem 3.5rem 1.2rem 3.5rem;
+        font-size: 1.4rem;
+      }
+
+      @include change(phone) {
+        margin-left: 12rem;
+        padding: 1.2rem 6.5rem 1.2rem 6rem;
+        font-size: 1.4rem;
+        margin-top: 2rem;
+      }
+      @include change(phone) {
+        padding: 1.7rem 5rem;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  &-logo {
+    //Main photo design part
+    width: 50%;
+    height: 34rem;
+    margin-top: 3rem;
+    margin-right: 12rem;
+
+    @include change(tab-land) {
+      height: 42rem;
+      width: 45%;
+      margin-top: 0rem;
+      margin-right: 0rem;
+      margin-left: 10rem;
+    }
+
+    @include change(phone) {
+      height: 42rem;
+      width: 80%;
+      margin-top: 2rem;
+      margin-right: 0rem;
+      margin-left: 0rem;
+    }
+  }
+}

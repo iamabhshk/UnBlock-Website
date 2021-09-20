@@ -1,0 +1,155 @@
+// ALL THE @INCLUDE TAGS ARE THE RESPONSIVE CODE
+
+.page-3 {
+  height: 100vh; //Page height set to 10vh
+  background-image: url("/img/wave-texture.png");
+
+  @include change(tab-land) {
+    height: 100%;
+  }
+}
+//Section about public opinio
+.clients {
+  margin-left: 6%;
+  margin-top: 5rem;
+  width: 60rem;
+  display: grid; //Used grid to creat 2 x 2 grid
+  justify-self: center;
+  grid-template-columns: 550px 550px; // 2 per each slide
+  grid-row: auto auto;
+
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+
+  @include change(tab-land) {
+    grid-template-columns: 550px;
+    margin-left: 0rem;
+    width: 100%;
+
+    div:nth-child(2) {
+      margin-left: 50%;
+      width: 100%;
+    }
+    div:nth-child(4) {
+      margin-left: 50%;
+      width: 100%;
+    }
+  }
+
+  @include change(tab-port) {
+    grid-template-columns: 380px;
+    width: 100%;
+
+    div:nth-child(2) {
+      margin-left: 60%;
+      width: 100%;
+    }
+    div:nth-child(4) {
+      margin-left: 50%;
+      width: 100%;
+    }
+  }
+
+  @include change(phone) {
+    grid-template-columns: 250px;
+
+    width: 100%;
+
+    div:nth-child(1) {
+      margin-left: 12%;
+      width: none;
+    }
+    div:nth-child(2) {
+      margin-left: 12%;
+      width: none;
+    }
+    div:nth-child(3) {
+      margin-left: 12%;
+      width: none;
+    }
+    div:nth-child(4) {
+      margin-left: 5%;
+      width: none;
+    }
+  }
+  //main box which created the grid box
+  &_box {
+    background-color: white;
+    padding: 2rem;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    font-family: Comfortaa;
+    //Individual boxes
+    &-1 {
+      //Paragraph of the client said
+      &_para {
+        font-size: 1.04rem;
+        width: 100%;
+        line-height: 1.5rem;
+        color: var(--text-color);
+
+        @include change(tab-land) {
+          font-size: 1.3rem;
+          line-height: 2rem;
+          font-weight: 300;
+          width: 100%;
+        }
+
+        @include change(tab-port) {
+          font-size: 1.3rem;
+          line-height: 2rem;
+          font-weight: 300;
+          width: 100%;
+        }
+      }
+      //details about the client ex name and designation
+      &_detail {
+        display: flex;
+        align-items: center;
+
+        margin-top: 2rem;
+        color: var(--text-color);
+        //photo of client
+        &_photo {
+          border-radius: 50%;
+          width: 10%;
+        }
+        //name of the client
+        &_namePost {
+          font-size: 0.8rem;
+          margin-left: 1rem;
+
+          & span {
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: oswald;
+          }
+          & p {
+            font-size: 1rem;
+            margin-top: 0.4rem;
+          }
+        }
+      }
+
+      @include change(phone) {
+        margin-left: 12%;
+        width: 100%;
+      }
+    }
+
+    @include change(tab-land) {
+      margin-left: 12rem;
+      width: 100%;
+    }
+
+    @include change(tab-port) {
+      margin-left: 10rem;
+    }
+    @include change(phone) {
+      margin-left: 0rem;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,58 @@
+// ALL THE @INCLUDE TAGS ARE THE RESPONSIVE CODE
+
+// Mixins code to make webite responsive
+
+@mixin change($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 600px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 900px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 1200px) {
+      @content;
+    }
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 1800px) {
+      @content;
+    }
+  }
+}
+
+* {
+  margin: 0; //TO remove the default margin and padding value
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+
+  ::selection {
+    color: var(--background-color);
+    background-color: var(--button-color);
+  }
+
+  @include change(tab-land) {
+    font-size: 56.25%;
+  }
+
+  @include change(tab-port) {
+    font-size: 50%;
+  }
+
+  @include change(big-desktop) {
+    font-size: 75%;
+  }
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: Comfortaa, cursive;
+}
